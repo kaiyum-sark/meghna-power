@@ -210,6 +210,7 @@ export default function Navbar() {
             background: "#111",
             borderTop: "1px solid rgba(249,115,22,0.15)",
             padding: "1rem 1.5rem 1.5rem",
+            flexDirection: "column",
           }}
           className="show-mobile"
         >
