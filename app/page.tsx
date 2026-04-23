@@ -91,9 +91,9 @@ const localBusinessSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Product",
-          name: "LT Panel",
+          name: "LT & HT Panel",
           description:
-            "Low-Tension distribution boards and panels for safe power distribution across industrial facilities.",
+            "Low-Tension distribution boards and High-Tension switchgear for complete power distribution from primary substation input to final load points. BPDB compliant.",
           image: "https://meghnapower.com.bd/lt.png",
           brand: { "@type": "Brand", name: "Meghna Power" },
         },
@@ -102,10 +102,10 @@ const localBusinessSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Product",
-          name: "HT Panel",
+          name: "Solar System",
           description:
-            "High-Tension switchgear and panels for primary power distribution in substations, compliant with BPDB specifications.",
-          image: "https://meghnapower.com.bd/ht.png",
+            "Grid-tied and off-grid solar power systems for industrial and commercial facilities. Full installation from panels to inverters and metering.",
+          image: "https://meghnapower.com.bd/solar.png",
           brand: { "@type": "Brand", name: "Meghna Power" },
         },
       },

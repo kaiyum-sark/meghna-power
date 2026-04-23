@@ -50,14 +50,14 @@ const en = {
         tag: "Ventilation",
       },
       {
-        name: "LT Panel",
-        desc: "Low-Tension distribution boards and panels for safe power distribution across industrial facilities and commercial buildings.",
-        tag: "Distribution",
+        name: "LT & HT Panel",
+        desc: "Low-Tension distribution boards and High-Tension switchgear for complete power distribution — from primary substation input to final load points. BPDB compliant.",
+        tag: "Switchgear",
       },
       {
-        name: "HT Panel",
-        desc: "High-Tension switchgear and panels for primary power distribution in substations, compliant with BPDB specifications.",
-        tag: "High Voltage",
+        name: "Solar System",
+        desc: "Grid-tied and off-grid solar power systems for industrial and commercial facilities. Full installation from panels to inverters and metering.",
+        tag: "Renewable",
       },
     ],
   },
@@ -221,7 +221,7 @@ const en = {
     orCall: "Or call us directly:",
     products: [
       "Power Transformer", "CT-PT Unit", "Auto PFI Panel",
-      "LT Panel", "HT Panel", "Industrial Exhaust Fan",
+      "LT & HT Panel", "Industrial Exhaust Fan", "Solar System",
       "Substation Repair", "Other",
     ],
   },
@@ -236,10 +236,10 @@ const en = {
     hoursLabel: "Business Hours",
     hoursValue: "Sat – Thu: 9 AM – 6 PM\nFriday: Closed",
     copyright: "Meghna Power. All rights reserved. Chowala, Narsingdi, Bangladesh.",
-    taglineBottom: "Transformers · CT-PT · Auto PFI · LT/HT Panels · Exhaust Fans",
+    taglineBottom: "Transformers · CT-PT · Auto PFI · LT/HT Panels · Solar · Exhaust Fans",
     products: [
       "Power Transformer", "CT-PT Unit", "Auto PFI Panel",
-      "LT Panel", "HT Panel", "Industrial Exhaust Fan",
+      "LT & HT Panel", "Industrial Exhaust Fan", "Solar System",
     ],
     services: [
       "Transformer Rewinding", "Substation Erection", "Panel Installation",

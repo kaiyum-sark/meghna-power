@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useLanguage } from "../context/LanguageContext";
 
-const images = ["/transformer.png", "/ct_pt.png", "/pfi.png", "/industrial_exhaust_fan.png", "/lt.png", "/ht.png"];
+const images = ["/transformer.png", "/ct_pt.png", "/pfi.png", "/industrial_exhaust_fan.png", "/lt.png", "/solar.png"];
 
 export default function Products() {
   const { t } = useLanguage();
