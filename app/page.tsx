@@ -12,13 +12,13 @@ import Footer from "./components/Footer";
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://meghnapower.com.bd/#business",
+  "@id": "https://meghnapower.biz/#business",
   name: "Meghna Power",
   description:
     "Manufacturer and repair specialist for substations and electrical equipment including transformers, CT-PT units, Auto PFI panels, LT/HT switchgear, and industrial exhaust fans.",
-  url: "https://meghnapower.com.bd",
-  logo: "https://meghnapower.com.bd/logo.png",
-  image: "https://meghnapower.com.bd/transformer.png",
+  url: "https://meghnapower.biz",
+  logo: "https://meghnapower.biz/logo.png",
+  image: "https://meghnapower.biz/transformer.png",
   telephone: "+880",
   address: {
     "@type": "PostalAddress",
@@ -61,7 +61,7 @@ const localBusinessSchema = {
           name: "Power Transformer",
           description:
             "High-efficiency distribution and power transformers for industrial and utility applications. Custom ratings from 25 kVA to 5000 kVA.",
-          image: "https://meghnapower.com.bd/transformer.png",
+          image: "https://meghnapower.biz/transformer.png",
           brand: { "@type": "Brand", name: "Meghna Power" },
         },
       },
@@ -72,7 +72,7 @@ const localBusinessSchema = {
           name: "CT-PT Unit",
           description:
             "Current Transformer and Potential Transformer assemblies for accurate measurement and protection in metering panels.",
-          image: "https://meghnapower.com.bd/ct_pt.png",
+          image: "https://meghnapower.biz/ct_pt.png",
           brand: { "@type": "Brand", name: "Meghna Power" },
         },
       },
@@ -83,7 +83,7 @@ const localBusinessSchema = {
           name: "Auto PFI Panel",
           description:
             "Automatic Power Factor Improvement panels that reduce reactive power, cut energy bills, and protect equipment.",
-          image: "https://meghnapower.com.bd/pfi.png",
+          image: "https://meghnapower.biz/pfi.png",
           brand: { "@type": "Brand", name: "Meghna Power" },
         },
       },
@@ -94,7 +94,7 @@ const localBusinessSchema = {
           name: "LT & HT Panel",
           description:
             "Low-Tension distribution boards and High-Tension switchgear for complete power distribution from primary substation input to final load points. BPDB compliant.",
-          image: "https://meghnapower.com.bd/lt.png",
+          image: "https://meghnapower.biz/lt.png",
           brand: { "@type": "Brand", name: "Meghna Power" },
         },
       },
@@ -105,7 +105,7 @@ const localBusinessSchema = {
           name: "Solar System",
           description:
             "Grid-tied and off-grid solar power systems for industrial and commercial facilities. Full installation from panels to inverters and metering.",
-          image: "https://meghnapower.com.bd/solar.png",
+          image: "https://meghnapower.biz/solar.png",
           brand: { "@type": "Brand", name: "Meghna Power" },
         },
       },
@@ -116,7 +116,7 @@ const localBusinessSchema = {
           name: "Industrial Exhaust Fan",
           description:
             "Heavy-duty ventilation fans for factories, substations, and industrial enclosures built for continuous operation.",
-          image: "https://meghnapower.com.bd/industrial_exhaust_fan.png",
+          image: "https://meghnapower.biz/industrial_exhaust_fan.png",
           brand: { "@type": "Brand", name: "Meghna Power" },
         },
       },

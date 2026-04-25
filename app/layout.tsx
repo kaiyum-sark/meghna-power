@@ -17,7 +17,7 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
-const SITE_URL = "https://meghnapower.com.bd";
+const SITE_URL = "https://meghnapower.biz";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
