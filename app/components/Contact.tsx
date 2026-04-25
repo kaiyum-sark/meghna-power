@@ -8,8 +8,27 @@ export default function Contact() {
   const c = t.contact;
 
   const [form, setForm] = useState({ name: "", phone: "", email: "", product: "", location: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
   const handle = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("success");
+      setForm({ name: "", phone: "", email: "", product: "", location: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
   };
 
   const inputStyle: React.CSSProperties = {
@@ -81,7 +100,7 @@ export default function Contact() {
           <div style={{ fontFamily: "var(--font-barlow), sans-serif", fontSize: "1.5rem", fontWeight: 800, color: "#fff", marginBottom: "0.375rem" }}>{c.formTitle}</div>
           <div style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.35)", marginBottom: "2rem" }}>{c.formSub}</div>
 
-          <form onSubmit={(e) => e.preventDefault()} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }} className="form-row">
               <div>
                 <label style={labelStyle}>{c.labelName}</label>
@@ -117,9 +136,25 @@ export default function Contact() {
               <textarea name="message" value={form.message} onChange={handle} placeholder={c.placeholderMessage} rows={4} style={{ ...inputStyle, resize: "vertical", minHeight: "100px" }} />
             </div>
 
-            <button type="submit" className="btn-primary" style={{ width: "100%", textAlign: "center", fontSize: "1rem", padding: "1rem", cursor: "pointer", border: "none" }}>
-              {c.submitBtn}
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="btn-primary"
+              style={{ width: "100%", textAlign: "center", fontSize: "1rem", padding: "1rem", cursor: status === "loading" ? "not-allowed" : "pointer", border: "none", opacity: status === "loading" ? 0.7 : 1 }}
+            >
+              {status === "loading" ? "Sending…" : c.submitBtn}
             </button>
+
+            {status === "success" && (
+              <div style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.3)", borderRadius: "6px", padding: "0.875rem 1rem", fontSize: "0.9rem", color: "#4ade80", textAlign: "center" }}>
+                ✓ Enquiry sent! We'll get back to you within 24 hours.
+              </div>
+            )}
+            {status === "error" && (
+              <div style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", borderRadius: "6px", padding: "0.875rem 1rem", fontSize: "0.9rem", color: "#f87171", textAlign: "center" }}>
+                Failed to send. Please call us directly or try again.
+              </div>
+            )}
 
             <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.25)", textAlign: "center" }}>
               {c.orCall}{" "}
