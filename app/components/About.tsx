@@ -19,7 +19,7 @@ export default function About() {
 
       <div style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center", position: "relative", zIndex: 1 }} className="about-grid">
         {/* Image side */}
-        <div style={{ position: "relative" }} className="about-img">
+        <div style={{ position: "relative" }} className="about-img reveal">
           <div style={{ position: "relative", borderRadius: "8px", overflow: "hidden", aspectRatio: "4/5", border: "1px solid rgba(249,115,22,0.15)", boxShadow: "0 32px 80px rgba(0,0,0,0.5)" }}>
             <Image src="/transformer.png" alt="Meghna Power facility" fill style={{ objectFit: "cover" }} />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(249,115,22,0.12) 0%, transparent 60%), linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)" }} />
@@ -31,7 +31,7 @@ export default function About() {
         </div>
 
         {/* Text side */}
-        <div>
+        <div className="reveal" data-delay="0.15">
           <div className="section-label" style={{ marginBottom: "0.75rem" }}>{a.sectionLabel}</div>
           <div className="divider-line" />
           <h2 style={{ fontFamily: "var(--font-barlow), sans-serif", fontSize: "clamp(2rem, 4vw, 3.25rem)", fontWeight: 900, lineHeight: 1.05, letterSpacing: "-0.02em", color: "#fff", marginBottom: "1.5rem" }}>

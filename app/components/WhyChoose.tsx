@@ -27,8 +27,8 @@ export default function WhyChoose() {
 
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "5rem 1.5rem 4rem" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem", marginBottom: "5rem" }} className="why-grid">
-          {w.reasons.map((r) => (
-            <div key={r.num} className="card-glow" style={{ background: "#161616", borderRadius: "8px", padding: "2rem", border: "1px solid rgba(255,255,255,0.06)" }}>
+          {w.reasons.map((r, i) => (
+            <div key={r.num} className="card-glow reveal" data-delay={String(i * 0.1)} style={{ background: "#161616", borderRadius: "8px", padding: "2rem", border: "1px solid rgba(255,255,255,0.06)" }}>
               <div style={{ fontFamily: "var(--font-barlow), sans-serif", fontSize: "3.5rem", fontWeight: 900, color: "rgba(249,115,22,0.2)", lineHeight: 1, marginBottom: "1rem" }}>{r.num}</div>
               <h3 style={{ fontFamily: "var(--font-barlow), sans-serif", fontSize: "1.375rem", fontWeight: 800, color: "#fff", marginBottom: "0.75rem", letterSpacing: "-0.01em" }}>{r.title}</h3>
               <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(255,255,255,0.45)" }}>{r.desc}</p>

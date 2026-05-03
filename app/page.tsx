@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import ScrollAnimator from "./components/ui/ScrollAnimator";
 import Products from "./components/Products";
 import About from "./components/About";
 import WhyChoose from "./components/WhyChoose";
@@ -174,6 +175,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <ScrollAnimator />
       <Navbar />
       <main>
         <Hero />

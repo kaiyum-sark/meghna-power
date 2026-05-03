@@ -11,7 +11,7 @@ export default function Services() {
       <div style={{ position: "absolute", right: "-200px", top: "20%", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%)", pointerEvents: "none" }} />
 
       <div style={{ maxWidth: "1280px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-        <div style={{ textAlign: "center", marginBottom: "1rem" }}>
+        <div className="reveal" style={{ textAlign: "center", marginBottom: "1rem" }}>
           <div className="section-label" style={{ marginBottom: "0.75rem" }}>{s.sectionLabel}</div>
           <h2 style={{ fontFamily: "var(--font-barlow), sans-serif", fontSize: "clamp(2.25rem, 4.5vw, 3.5rem)", fontWeight: 900, lineHeight: 1, letterSpacing: "-0.02em", color: "#fff", marginBottom: "0.75rem" }}>
             {s.heading1}{" "}<span className="text-gradient">{s.heading2}</span>

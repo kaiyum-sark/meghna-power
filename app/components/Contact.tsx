@@ -62,7 +62,7 @@ export default function Contact() {
 
       <div style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: "4rem", alignItems: "start" }} className="contact-grid">
         {/* Left */}
-        <div>
+        <div className="reveal">
           <div className="section-label" style={{ marginBottom: "0.75rem" }}>{c.sectionLabel}</div>
           <div className="divider-line" />
           <h2 style={{ fontFamily: "var(--font-barlow), sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 900, lineHeight: 1.05, letterSpacing: "-0.02em", color: "#fff", marginBottom: "1.25rem" }}>
@@ -96,7 +96,7 @@ export default function Contact() {
         </div>
 
         {/* Form */}
-        <div style={{ background: "#161616", borderRadius: "12px", padding: "2.5rem", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "0 24px 60px rgba(0,0,0,0.4)" }}>
+        <div className="reveal" data-delay="0.15" style={{ background: "#161616", borderRadius: "12px", padding: "2.5rem", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "0 24px 60px rgba(0,0,0,0.4)" }}>
           <div style={{ fontFamily: "var(--font-barlow), sans-serif", fontSize: "1.5rem", fontWeight: 800, color: "#fff", marginBottom: "0.375rem" }}>{c.formTitle}</div>
           <div style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.35)", marginBottom: "2rem" }}>{c.formSub}</div>
 

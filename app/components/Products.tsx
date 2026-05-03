@@ -22,7 +22,7 @@ export default function Products() {
       />
 
       <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+        <div className="reveal" style={{ textAlign: "center", marginBottom: "4rem" }}>
           <div className="section-label" style={{ marginBottom: "0.75rem" }}>{p.sectionLabel}</div>
           <h2
             style={{
@@ -42,7 +42,8 @@ export default function Products() {
           {p.items.map((item, i) => (
             <div
               key={item.name}
-              className="card-glow"
+              className="card-glow reveal"
+              data-delay={String((i % 3) * 0.1)}
               style={{ background: "#161616", borderRadius: "8px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)" }}
             >
               <div style={{ height: "200px", position: "relative", background: "#0f0f0f", overflow: "hidden" }}>

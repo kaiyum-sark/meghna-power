@@ -20,7 +20,7 @@ export default function Testimonials() {
       <div style={{ position: "absolute", top: "40%", left: 0, right: 0, height: "200px", background: "linear-gradient(90deg, rgba(249,115,22,0.03) 0%, transparent 50%)", pointerEvents: "none" }} />
 
       <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+        <div className="reveal" style={{ textAlign: "center", marginBottom: "3.5rem" }}>
           <div className="section-label" style={{ marginBottom: "0.75rem" }}>{ts.sectionLabel}</div>
           <h2 style={{ fontFamily: "var(--font-barlow), sans-serif", fontSize: "clamp(2.25rem, 4.5vw, 3.5rem)", fontWeight: 900, lineHeight: 1, letterSpacing: "-0.02em", color: "#fff" }}>
             {ts.heading1}{" "}<span className="text-gradient">{ts.heading2}</span>
@@ -28,8 +28,8 @@ export default function Testimonials() {
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }} className="testi-grid">
-          {ts.items.map((item) => (
-            <div key={item.name} className="card-glow" style={{ background: "#161616", borderRadius: "8px", padding: "2rem", border: "1px solid rgba(255,255,255,0.06)", display: "flex", flexDirection: "column", position: "relative", overflow: "hidden" }}>
+          {ts.items.map((item, i) => (
+            <div key={item.name} className="card-glow reveal" data-delay={String(i * 0.1)} style={{ background: "#161616", borderRadius: "8px", padding: "2rem", border: "1px solid rgba(255,255,255,0.06)", display: "flex", flexDirection: "column", position: "relative", overflow: "hidden" }}>
               <div style={{ position: "absolute", top: "-0.5rem", right: "1.5rem", fontFamily: "Georgia, serif", fontSize: "6rem", color: "rgba(249,115,22,0.08)", lineHeight: 1, pointerEvents: "none", userSelect: "none" }}>"</div>
               <Stars count={5} />
               <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem", flex: 1 }}>{item.text}</p>
