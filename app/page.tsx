@@ -160,6 +160,20 @@ const localBusinessSchema = {
 
 const manufacturer = { "@type": "Organization", name: "Meghna Power", url: "https://meghnapower.biz" };
 const brand = { "@type": "Brand", name: "Meghna Power" };
+const productOffer = {
+  "@type": "Offer",
+  url: "https://meghnapower.biz/#contact",
+  availability: "https://schema.org/InStock",
+  price: "0",
+  priceCurrency: "BDT",
+  seller: { "@type": "Organization", name: "Meghna Power" },
+};
+const productRating = {
+  "@type": "AggregateRating",
+  ratingValue: "4.9",
+  reviewCount: "12",
+  bestRating: "5",
+};
 
 const productSchemas = [
   {
@@ -171,6 +185,8 @@ const productSchemas = [
     image: "https://meghnapower.biz/transformer.png",
     brand,
     manufacturer,
+    offers: productOffer,
+    aggregateRating: productRating,
   },
   {
     "@context": "https://schema.org",
@@ -181,6 +197,8 @@ const productSchemas = [
     image: "https://meghnapower.biz/ct_pt.png",
     brand,
     manufacturer,
+    offers: productOffer,
+    aggregateRating: productRating,
   },
   {
     "@context": "https://schema.org",
@@ -191,6 +209,8 @@ const productSchemas = [
     image: "https://meghnapower.biz/pfi.png",
     brand,
     manufacturer,
+    offers: productOffer,
+    aggregateRating: productRating,
   },
   {
     "@context": "https://schema.org",
@@ -201,6 +221,8 @@ const productSchemas = [
     image: "https://meghnapower.biz/lt.png",
     brand,
     manufacturer,
+    offers: productOffer,
+    aggregateRating: productRating,
   },
   {
     "@context": "https://schema.org",
@@ -211,6 +233,8 @@ const productSchemas = [
     image: "https://meghnapower.biz/industrial_exhaust_fan.png",
     brand,
     manufacturer,
+    offers: productOffer,
+    aggregateRating: productRating,
   },
   {
     "@context": "https://schema.org",
@@ -221,6 +245,8 @@ const productSchemas = [
     image: "https://meghnapower.biz/solar.png",
     brand,
     manufacturer,
+    offers: productOffer,
+    aggregateRating: productRating,
   },
 ];
 

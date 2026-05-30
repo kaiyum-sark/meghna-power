@@ -76,7 +76,13 @@ export default function Footer() {
 
       <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", padding: "1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem", maxWidth: "1280px", margin: "0 auto" }}>
         <div style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.25)" }}>© {new Date().getFullYear()} {f.copyright}</div>
-        <div style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.25)" }}>{f.taglineBottom}</div>
+        <div style={{ display: "flex", alignItems: "center", gap: "1.25rem" }}>
+          <a href="/privacy-policy" style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", textDecoration: "none", transition: "color 0.2s ease" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
+          >Privacy Policy</a>
+          <div style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.25)" }}>{f.taglineBottom}</div>
+        </div>
       </div>
 
       <style>{`
