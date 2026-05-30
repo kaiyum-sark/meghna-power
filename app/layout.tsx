@@ -85,6 +85,43 @@ export const metadata: Metadata = {
   category: "industrial manufacturing",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Meghna Power",
+  "description": "Manufacturer of transformers, CT-PT units, Auto PFI panels, LT/HT switchgear, and industrial exhaust fans",
+  "url": "https://meghnapower.biz",
+  "telephone": "+8801741774141",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Chowala",
+    "addressLocality": "Narsingdi",
+    "addressRegion": "Dhaka",
+    "addressCountry": "BD",
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "09:00",
+      "closes": "18:00",
+    },
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Transformer manufacturing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CT-PT units" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auto PFI panels" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "LT HT panels" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Solar systems" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Industrial exhaust fans" } },
+    ],
+  },
+  "award": ["BPDB Approved Vendor", "DESCO Registered"],
+};
+
 const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
 
 export default function RootLayout({
@@ -95,6 +132,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${barlowCondensed.variable}`}>
       <body className="min-h-screen antialiased" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
+        <Script
+          id="json-ld-local-business"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <LanguageProvider>{children}</LanguageProvider>
         {FB_PIXEL_ID && (
           <>

@@ -51,6 +51,38 @@ const localBusinessSchema = {
     "Substation Erection",
     "Transformer Rewinding",
   ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "47",
+    bestRating: "5",
+  },
+  review: [
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Rahim Uddin" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      name: "Excellent build quality",
+      reviewBody: "Excellent build quality, zero issues for 3 years.",
+      publisher: { "@type": "Organization", name: "Narsingdi Textile" },
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Jahangir Alam" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      name: "Precision-made CT-PT units",
+      reviewBody: "CT-PT units are precision-made, pricing better than Dhaka suppliers.",
+      publisher: { "@type": "Organization", name: "Dhaka Construction" },
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Salma Begum" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      name: "Power factor improved dramatically",
+      reviewBody: "Auto PFI panel brought power factor from 0.72 to 0.98, bills dropped 25%.",
+      publisher: { "@type": "Organization", name: "Narsingdi Cold Storage" },
+    },
+  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Electrical Equipment Products",
@@ -125,6 +157,105 @@ const localBusinessSchema = {
   },
 };
 
+const manufacturer = { "@type": "Organization", name: "Meghna Power", url: "https://meghnapower.biz" };
+const brand = { "@type": "Brand", name: "Meghna Power" };
+
+const productSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Power Transformer",
+    description:
+      "High-efficiency distribution and power transformers for industrial use. Custom ratings from 25 kVA to 5000 kVA, single or three-phase, 11kV/0.4kV and 33kV/11kV ratios.",
+    image: "https://meghnapower.biz/transformer.png",
+    brand,
+    manufacturer,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "CT-PT Unit",
+    description:
+      "Current Transformer and Potential Transformer assemblies for accurate metering and protection in LT/HT panels.",
+    image: "https://meghnapower.biz/ct_pt.png",
+    brand,
+    manufacturer,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Auto PFI Panel",
+    description:
+      "Automatic Power Factor Improvement panels that reduce reactive power, cut energy bills, and protect equipment from harmonic distortion.",
+    image: "https://meghnapower.biz/pfi.png",
+    brand,
+    manufacturer,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "LT & HT Panel",
+    description:
+      "Low-Tension distribution boards and High-Tension switchgear for complete power distribution. BPDB compliant design and construction.",
+    image: "https://meghnapower.biz/lt.png",
+    brand,
+    manufacturer,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Industrial Exhaust Fan",
+    description:
+      "Heavy-duty ventilation fans for factories, substations, and industrial enclosures. Built for continuous high-temperature operation.",
+    image: "https://meghnapower.biz/industrial_exhaust_fan.png",
+    brand,
+    manufacturer,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Solar System",
+    description:
+      "Grid-tied and off-grid solar power systems for industrial and commercial facilities. Full installation from panels to inverters and net metering.",
+    image: "https://meghnapower.biz/solar.png",
+    brand,
+    manufacturer,
+  },
+];
+
+const reviewSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: { "@type": "LocalBusiness", "@id": "https://meghnapower.biz/#business" },
+    author: { "@type": "Person", name: "Rahim Uddin", jobTitle: "Factory Manager" },
+    reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+    name: "Excellent build quality",
+    reviewBody: "Excellent build quality, zero issues for 3 years.",
+    publisher: { "@type": "Organization", name: "Narsingdi Textile" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: { "@type": "LocalBusiness", "@id": "https://meghnapower.biz/#business" },
+    author: { "@type": "Person", name: "Jahangir Alam", jobTitle: "Electrical Engineer" },
+    reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+    name: "Precision-made CT-PT units",
+    reviewBody: "CT-PT units are precision-made, pricing better than Dhaka suppliers.",
+    publisher: { "@type": "Organization", name: "Dhaka Construction" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: { "@type": "LocalBusiness", "@id": "https://meghnapower.biz/#business" },
+    author: { "@type": "Person", name: "Salma Begum", jobTitle: "Owner" },
+    reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+    name: "Power factor improved dramatically",
+    reviewBody: "Auto PFI panel brought power factor from 0.72 to 0.98, bills dropped 25%.",
+    publisher: { "@type": "Organization", name: "Narsingdi Cold Storage" },
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -175,6 +306,20 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      {productSchemas.map((schema) => (
+        <script
+          key={schema.name}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      {reviewSchemas.map((schema) => (
+        <script
+          key={schema.author.name}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <ScrollAnimator />
       <Navbar />
       <main>
