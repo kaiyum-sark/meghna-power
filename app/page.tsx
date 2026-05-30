@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import WhatsAppButton from "./components/WhatsAppButton";
 import Hero from "./components/Hero";
 import ScrollAnimator from "./components/ui/ScrollAnimator";
 import Products from "./components/Products";
@@ -333,6 +334,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }
