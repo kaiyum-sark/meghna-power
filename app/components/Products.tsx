@@ -3,6 +3,14 @@ import Image from "next/image";
 import { useLanguage } from "../context/LanguageContext";
 
 const images = ["/transformer.png", "/ct_pt.png", "/pfi.png", "/industrial_exhaust_fan.png", "/lt.png", "/solar.png"];
+const productSlugs = [
+  "power-transformer",
+  "ct-pt-unit",
+  "auto-pfi-panel",
+  "industrial-exhaust-fan",
+  "lt-ht-panel",
+  "solar-system",
+];
 
 export default function Products() {
   const { t } = useLanguage();
@@ -46,7 +54,7 @@ export default function Products() {
               data-delay={String((i % 3) * 0.1)}
               style={{ background: "#161616", borderRadius: "8px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)" }}
             >
-              <div style={{ height: "200px", position: "relative", background: "#0f0f0f", overflow: "hidden" }}>
+              <a href={`/products/${productSlugs[i]}`} style={{ display: "block", height: "200px", position: "relative", background: "#0f0f0f", overflow: "hidden", textDecoration: "none" }}>
                 {images[i] ? (
                   <Image src={images[i]!} alt={item.name} fill style={{ objectFit: "cover" }} />
                 ) : (
@@ -77,12 +85,17 @@ export default function Products() {
                 >
                   {item.tag}
                 </div>
-              </div>
+              </a>
 
               <div style={{ padding: "1.5rem" }}>
-                <h3 style={{ fontFamily: "var(--font-barlow), sans-serif", fontSize: "1.375rem", fontWeight: 800, color: "#fff", letterSpacing: "-0.01em", marginBottom: "0.625rem" }}>
-                  {item.name}
-                </h3>
+                <a href={`/products/${productSlugs[i]}`} style={{ textDecoration: "none" }}>
+                  <h3 style={{ fontFamily: "var(--font-barlow), sans-serif", fontSize: "1.375rem", fontWeight: 800, color: "#fff", letterSpacing: "-0.01em", marginBottom: "0.625rem", transition: "color 0.2s ease" }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLHeadingElement).style.color = "#f97316"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLHeadingElement).style.color = "#fff"; }}
+                  >
+                    {item.name}
+                  </h3>
+                </a>
                 <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "rgba(255,255,255,0.45)", marginBottom: "1.25rem" }}>
                   {item.desc}
                 </p>

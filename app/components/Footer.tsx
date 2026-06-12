@@ -2,6 +2,15 @@
 import Image from "next/image";
 import { useLanguage } from "../context/LanguageContext";
 
+const footerProductSlugs: Record<string, string> = {
+  "Power Transformer": "power-transformer",
+  "CT-PT Unit": "ct-pt-unit",
+  "Auto PFI Panel": "auto-pfi-panel",
+  "LT & HT Panel": "lt-ht-panel",
+  "Industrial Exhaust Fan": "industrial-exhaust-fan",
+  "Solar System": "solar-system",
+};
+
 export default function Footer() {
   const { t } = useLanguage();
   const f = t.footer;
@@ -33,7 +42,7 @@ export default function Footer() {
           <div style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#f97316", marginBottom: "1.25rem" }}>{f.productsLabel}</div>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.625rem" }}>
             {f.products.map((p) => (
-              <a key={p} href="#products" style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", textDecoration: "none", transition: "color 0.2s ease" }}
+              <a key={p} href={footerProductSlugs[p] ? `/products/${footerProductSlugs[p]}` : "#products"} style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", textDecoration: "none", transition: "color 0.2s ease" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.4)")}
               >{p}</a>

@@ -1,45 +1,39 @@
 import type { MetadataRoute } from "next";
 
+const BASE_URL = "https://meghnapower.biz";
+
+const productSlugs: string[] = [
+  "power-transformer",
+  "ct-pt-unit",
+  "auto-pfi-panel",
+  "lt-ht-panel",
+  "industrial-exhaust-fan",
+  "solar-system",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://meghnapower.biz";
   const now = new Date();
+
+  const productEntries: MetadataRoute.Sitemap = productSlugs.map((slug) => ({
+    url: `${BASE_URL}/products/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
 
   return [
     {
-      url: base,
+      url: BASE_URL,
       lastModified: now,
-      changeFrequency: "monthly",
-      priority: 1,
+      changeFrequency: "weekly",
+      priority: 1.0,
     },
     {
-      url: `${base}/#products`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${base}/#about`,
+      url: `${BASE_URL}/privacy-policy`,
       lastModified: now,
       changeFrequency: "yearly",
-      priority: 0.7,
+      priority: 0.3,
     },
-    {
-      url: `${base}/#services`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${base}/#faq`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${base}/#contact`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.8,
-    },
+    ...productEntries,
   ];
 }
