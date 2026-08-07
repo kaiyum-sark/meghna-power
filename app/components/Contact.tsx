@@ -26,6 +26,11 @@ export default function Contact() {
       if (!res.ok) throw new Error();
       setStatus("success");
       setForm({ name: "", phone: "", email: "", product: "", location: "", message: "" });
+      if (typeof window !== "undefined" && (window as Window & { fbq?: (...a: unknown[]) => void }).fbq) {
+        (window as Window & { fbq?: (...a: unknown[]) => void }).fbq!("track", "Lead", {
+          content_name: form.product || "General Enquiry",
+        });
+      }
     } catch {
       setStatus("error");
     }

@@ -18,12 +18,19 @@ export default function WhatsAppButton() {
     };
   }, []);
 
+  const handleClick = () => {
+    if (typeof window !== "undefined" && (window as Window & { fbq?: (...a: unknown[]) => void }).fbq) {
+      (window as Window & { fbq?: (...a: unknown[]) => void }).fbq!("track", "Contact");
+    }
+  };
+
   return (
     <a
       href={HREF}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
+      onClick={handleClick}
       style={{
         position: "fixed",
         bottom: "28px",
