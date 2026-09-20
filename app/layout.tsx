@@ -88,9 +88,12 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://meghnapower.biz/#business",
   "name": "Meghna Power",
   "description": "Manufacturer of transformers, CT-PT units, Auto PFI panels, LT/HT switchgear, and industrial exhaust fans",
   "url": "https://meghnapower.biz",
+  "logo": "https://meghnapower.biz/logo.png",
+  "image": "https://meghnapower.biz/transformer.png",
   "telephone": "+8801741774141",
   "address": {
     "@type": "PostalAddress",
@@ -99,6 +102,11 @@ const jsonLd = {
     "addressRegion": "Dhaka",
     "addressCountry": "BD",
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 23.9144,
+    "longitude": 90.7153,
+  },
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -106,6 +114,16 @@ const jsonLd = {
       "opens": "09:00",
       "closes": "18:00",
     },
+  ],
+  "foundingDate": "2009",
+  "knowsAbout": [
+    "Power Transformer Manufacturing",
+    "CT-PT Units",
+    "Auto PFI Panels",
+    "LT Panel",
+    "HT Switchgear",
+    "Substation Erection",
+    "Transformer Rewinding"
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -137,6 +155,23 @@ export default function RootLayout({
           type="application/ld+json"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <Script
+          id="ga-gtag-src"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZE2SN3SCY8"
+        />
+        <Script
+          id="ga-gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-ZE2SN3SCY8');
+            `,
+          }}
         />
         <LanguageProvider>{children}</LanguageProvider>
         {FB_PIXEL_ID && (

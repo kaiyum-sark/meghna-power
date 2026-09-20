@@ -34,28 +34,6 @@ export default async function ProductPage({ params }: Props) {
   const product = productMap.get(slug);
   if (!product) notFound();
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: product.name,
-    description: product.metaDesc,
-    image: `https://meghnapower.biz${product.image}`,
-    brand: { "@type": "Brand", name: "Meghna Power" },
-    manufacturer: { "@type": "Organization", name: "Meghna Power", url: "https://meghnapower.biz" },
-    offers: {
-      "@type": "Offer",
-      url: `https://meghnapower.biz/products/${slug}`,
-      availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "Meghna Power" },
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "12",
-      bestRating: "5",
-    },
-  };
-
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -75,7 +53,6 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <div style={{ background: "#080808", minHeight: "100vh", color: "rgba(255,255,255,0.8)", fontFamily: "var(--font-inter), sans-serif" }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       {/* Header */}
