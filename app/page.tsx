@@ -21,7 +21,7 @@ const localBusinessSchema = {
   url: "https://meghnapower.biz",
   logo: "https://meghnapower.biz/logo.png",
   image: "https://meghnapower.biz/transformer.png",
-  telephone: "+880",
+  telephone: "+8801741774141",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Chowala",
@@ -164,8 +164,6 @@ const productOffer = {
   "@type": "Offer",
   url: "https://meghnapower.biz/#contact",
   availability: "https://schema.org/InStock",
-  price: "0",
-  priceCurrency: "BDT",
   seller: { "@type": "Organization", name: "Meghna Power" },
 };
 const productRating = {

@@ -88,7 +88,7 @@ export default function PrivacyPolicy() {
               We do <strong style={{ color: "#fff" }}>not sell, rent, trade, or otherwise share</strong> your personal information with any third party, advertiser, or data broker.
             </p>
             <p>
-              Your form submissions are received and processed solely by {COMPANY} staff. We use <strong style={{ color: "#fff" }}>Resend</strong> as our email delivery provider to route form notifications to our inbox — your data passes through their servers in transit but is not stored or used by them for any other purpose. Resend is GDPR-compliant.
+              Your form submissions are received and processed solely by {COMPANY} staff. We route form notifications to our inbox through our configured Gmail SMTP account, so your data passes through Google's email infrastructure in transit and is then handled in our mailbox.
             </p>
             <p>
               We may disclose information only if required by applicable law or a valid legal process.

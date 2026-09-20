@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: SITE_URL,
-    languages: { "en-BD": SITE_URL, "bn-BD": `${SITE_URL}/bn` },
+    languages: { "en-BD": SITE_URL },
   },
   openGraph: {
     type: "website",

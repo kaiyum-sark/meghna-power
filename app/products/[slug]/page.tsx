@@ -46,8 +46,6 @@ export default async function ProductPage({ params }: Props) {
       "@type": "Offer",
       url: `https://meghnapower.biz/products/${slug}`,
       availability: "https://schema.org/InStock",
-      price: "0",
-      priceCurrency: "BDT",
       seller: { "@type": "Organization", name: "Meghna Power" },
     },
     aggregateRating: {

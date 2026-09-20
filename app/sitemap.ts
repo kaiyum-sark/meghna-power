@@ -1,15 +1,7 @@
 import type { MetadataRoute } from "next";
+import { productSlugs } from "./products/data";
 
 const BASE_URL = "https://meghnapower.biz";
-
-const productSlugs: string[] = [
-  "power-transformer",
-  "ct-pt-unit",
-  "auto-pfi-panel",
-  "lt-ht-panel",
-  "industrial-exhaust-fan",
-  "solar-system",
-];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
